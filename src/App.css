@@ -1,0 +1,5 @@
+@media (max-width: 991.98px) { 
+    body .min-vh-custom-mobile {
+        min-height: auto !important;
+    }
+ }

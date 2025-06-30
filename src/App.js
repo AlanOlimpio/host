@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import './App.css';
 import Layout from './components/Layout';
@@ -8,6 +8,7 @@ import Loading from './components/Loading';
 const DashboardPage = React.lazy(() => import('DashboardApp/DashboardPage'));
 const ListPage = React.lazy(() => import('ListApp/ListRoutes'));
 const RegisterPage = React.lazy(() => import('RegisterApp/RegisterPage'));
+const ModalRegister = React.lazy(() => import('RegisterApp/ModalRegister'));
 
 const App = () => {
   const routes = createBrowserRouter([
@@ -43,6 +44,17 @@ const App = () => {
               <RegisterPage />
             </Suspense>
           ),
+          children: [
+            {
+              index: true,
+              path: 'modal',
+              element: (
+                <Suspense fallback={<Loading />}>
+                  <ModalRegister />
+                </Suspense>
+              ),
+            },
+          ],
         },
       ],
     },

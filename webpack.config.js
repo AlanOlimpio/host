@@ -1,8 +1,8 @@
+require('dotenv/config');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { dependencies } = require('./package.json');
-
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
   },
-  mode: 'production',
+  mode: process.env.NODE_ENV,
   devServer: {
     historyApiFallback: {
       index: '/index.html',
@@ -62,11 +62,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'Host',
       remotes: {
-        DashboardApp:
-          'DashboardApp@https://dashboard-tan-tau-10.vercel.app/remoteEntry.js',
-        ListApp: 'ListApp@https://list-six-xi.vercel.app/remoteEntry.js',
-        RegisterApp:
-          'RegisterApp@https://register-navy-ten.vercel.app/remoteEntry.js',
+        DashboardApp: `DashboardApp@${process.env.MICRO_FRONT_END_DASHBOARD}/remoteEntry.js`,
+        ListApp: `ListApp@${process.env.MICRO_FRONT_END_LIST}/remoteEntry.js`,
+        RegisterApp: `RegisterApp@${process.env.MICRO_FRONT_END_REGISTER}/remoteEntry.js`,
       },
       shared: {
         ...dependencies,

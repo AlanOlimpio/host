@@ -2,6 +2,8 @@
 
 Esse aplicativo foi desenvolvido no curso <a href="https://www.udemy.com/course/webpack-do-basico-ao-avancado-com-projeto/" target="_blank">Webpack do básico ao avançado</a> , e teve como objetivo aprender tudo o que é necessário para trabalhar com Webpack.
 
+## ✔️ Host demo 
+<a href="https://host-five-tan.vercel.app/" target="_blank">Link</a>
 |Host Dashboard|Host List|Host Register|Host Modal Register|
 |------|------|------|------|
 |<img src="host-dashboard.png" alt="Dashboard" >|<img src="host-list.png" alt="List" >|<img src="host-register.png" alt="Register" >|<img src="host-modal-register.png" alt="Modal Register" >|

@@ -67,18 +67,19 @@ module.exports = {
         RegisterApp: `RegisterApp@${process.env.MICRO_FRONT_END_REGISTER}/remoteEntry.js`,
       },
       shared: {
-        ...dependencies,
         react: {
           singleton: true,
-          requiredVersion: dependencies['react'],
+          eager: true,
+          requiredVersion: false,
         },
         'react-dom': {
           singleton: true,
-          requiredVersion: dependencies['react-dom'],
+          eager: true,
+          requiredVersion: false,
         },
         'react-router-dom': {
           singleton: true,
-          requiredVersion: dependencies['react-router-dom'],
+          requiredVersion: false,
         },
       },
     }),

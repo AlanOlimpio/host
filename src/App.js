@@ -4,6 +4,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
 import Loading from './components/Loading';
+import RouteErrorBoundary from './components/RouteErrorBoundary';
 
 const DashboardPage = React.lazy(() => import('DashboardApp/DashboardPage'));
 const ListPage = React.lazy(() => import('ListApp/ListRoutes'));
@@ -19,7 +20,6 @@ const App = () => {
           <Layout />
         </Suspense>
       ),
-      errorElement: <div>Error</div>,
       children: [
         {
           index: true,
@@ -28,6 +28,7 @@ const App = () => {
               <DashboardPage />
             </Suspense>
           ),
+          errorElement: <RouteErrorBoundary />,
         },
         {
           path: 'list/*',
@@ -36,6 +37,7 @@ const App = () => {
               <ListPage />
             </Suspense>
           ),
+          errorElement: <RouteErrorBoundary />,
         },
         {
           path: 'register/*',
@@ -44,6 +46,7 @@ const App = () => {
               <RegisterPage />
             </Suspense>
           ),
+          errorElement: <RouteErrorBoundary />,
           children: [
             {
               index: true,
@@ -53,6 +56,7 @@ const App = () => {
                   <ModalRegister />
                 </Suspense>
               ),
+              errorElement: <RouteErrorBoundary />,
             },
           ],
         },

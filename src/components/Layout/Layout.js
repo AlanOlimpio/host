@@ -7,7 +7,7 @@ import './Layout.css';
 
 function Layout() {
   return (
-    <Container className="p-0">
+    <Container>
       <Row>
         <Col lg={12}>
           <Menu />

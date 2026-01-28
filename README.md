@@ -2,8 +2,9 @@
 
 Esse aplicativo foi desenvolvido no curso <a href="https://www.udemy.com/course/webpack-do-basico-ao-avancado-com-projeto/" target="_blank">Webpack do básico ao avançado</a> , e teve como objetivo aprender tudo o que é necessário para trabalhar com Webpack.
 
-## ✔️ Host demo 
-<a href="https://host-five-tan.vercel.app/" target="_blank">Link</a>
+## ✔️ Host demo
+
+<a href="https://host-five-tan.vercel.app/" target="_blank">Link: https://host-five-tan.vercel.app/</a>
 |Host Dashboard|Host List|Host Register|Host Modal Register|
 |------|------|------|------|
 |<img src="host-dashboard.png" alt="Dashboard" >|<img src="host-list.png" alt="List" >|<img src="host-register.png" alt="Register" >|<img src="host-modal-register.png" alt="Modal Register" >|
@@ -33,27 +34,26 @@ Navega para pasta de cada micro front end execute npm i ou yarn para instalar as
 
 1. Micro front end `dashboard` :
    ```shell
-   cd dashboard  
+   cd dashboard
    yarn
    yarn start
    ```
 2. Micro front end `list` :
    ```shell
-   cd list  
+   cd list
    yarn
    yarn start
    ```
 3. Micro front end `register` :
    ```shell
-   cd register  
+   cd register
    yarn
    yarn start
    ```
 4. Micro front end `host` :
    ```shell
-   cd host  
+   cd host
    yarn
    yarn start
    ```
-Depois, acesse <a href="http://localhost:9001/" target="_blank">http://localhost:9001/</a> no seu navegador. 
-
+   Depois, acesse <a href="http://localhost:9001/" target="_blank">http://localhost:9001/</a> no seu navegador.

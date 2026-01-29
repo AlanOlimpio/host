@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,11 +8,17 @@ import Logo from '../Logo';
 function Menu() {
   const navegate = useNavigate();
 
+  const [expanded, setExpanded] = useState(false);
+
+  const closeNavbar = () => setExpanded(false);
+
   return (
     <Navbar
       expand="lg"
       className="bg-dark custom-toggler shadow-sm"
       fixed="top"
+      expanded={expanded}
+      onToggle={(value) => setExpanded(value)}
     >
       <Container>
         <Navbar.Brand href="/">
@@ -35,7 +41,10 @@ function Menu() {
               <Nav.Link
                 eventKey="1"
                 className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                onClick={() => navegate('/')}
+                onClick={() => {
+                  navegate('/');
+                  closeNavbar();
+                }}
               >
                 Dashboard
               </Nav.Link>
@@ -44,7 +53,10 @@ function Menu() {
               <Nav.Link
                 eventKey="2"
                 className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                onClick={() => navegate('/list')}
+                onClick={() => {
+                  navegate('/list');
+                  closeNavbar();
+                }}
               >
                 List
               </Nav.Link>
@@ -53,7 +65,10 @@ function Menu() {
               <Nav.Link
                 eventKey="3"
                 className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
-                onClick={() => navegate('/register')}
+                onClick={() => {
+                  navegate('/register');
+                  closeNavbar();
+                }}
               >
                 Register
               </Nav.Link>
